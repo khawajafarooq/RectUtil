@@ -49,7 +49,7 @@ button.frame = CGRectUtility.GMRectWithSetSize(rect: cgBtn.frame, newSize: CGSiz
 button.frame = CGRectUtility.GMRectShrinkHeight(rect: cgBtn.frame, shrinkAmount: 40.0)
 ```
 
-*change center of a frame within a container*
+*Changing center of a frame within a container*
 ```
 button.frame = CGRectUtility.GMCenteredRectWithinRect(rect: cgBtn.frame, containerRect: superView.frame)
 ```
@@ -60,4 +60,4 @@ button.frame = CGRectUtility.GMCenteredRectWithinRect(rect: cgBtn.frame, contain
 - Insert it into your source code
 - Use as explained in examples (playground)
 
-Always open to suggestions and improvements!
+Open to suggestions and improvements!
