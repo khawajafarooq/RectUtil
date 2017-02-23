@@ -1,5 +1,5 @@
 # RectUtil
-Utility Methods for class CGRect.
+CGRect is a powerful class which is used to set position, size and frame of a view on screen. RectUtil is a syntactic sugar version of CGRect to achieve same functionality. RectUtil covers the basic functionality of CGRect handling. It will make your life easy while interacting with CGRect.
 
 **Features**
 
