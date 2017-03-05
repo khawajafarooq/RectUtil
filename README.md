@@ -1,63 +1,91 @@
-# RectUtil
-Utility Methods for class CGRect.
+## RectUtil
+RectUtil is a syntactic sugar of CGRect. It will make your life easy while interacting with CGRect.
 
-**Features**
+I have accomplished it using 2 approaches:
+- Utility class
+- UIView Extension
 
-- Ease of changing origin X and Y of a frame
-- Ease of changing size (width and height) of a frame
-- Shrink height of a frame
-- Finding distance between two points
-- Changing the center of a view within a container view
+### Utility
+Util is explained with example XCode project on the blog post [RectUtil - iOS CGRect Utility Class
+](https://medium.com/@kfarooqa/rectutil-ios-cgrect-utility-class-a4792a964e58#.wf8qtzjby).
 
-**How to run?**
+### Extension
+Another approach of achieving this using UIView extension.
 
-- Open the project file
-- Select GeometryPlayground.playground
-- Select Show Assitant Editor or press cmd+alt+enter
-
-*Below is the piece of code will render your view on playground*
 ```
-XCPlaygroundPage.currentPage.liveView = superView
+extension UIView {
+    
+    // MARK: Geometry Methods
+    func centeredRectWithinRect(containerRect: CGRect)
+    {
+        self.frame.origin.y = containerRect.size.height / 2 - (self.frame.size.height / 2)
+        self.frame.origin.x = containerRect.size.width / 2 - (self.frame.size.width / 2)
+    }
+    
+    func distanceBetweenTwoPoints(point1: CGPoint, point2: CGPoint) -> CGFloat
+    {
+        let dx: CGFloat = point2.x - point1.x
+        let dy: CGFloat = point2.y - point1.y
+        
+        return sqrt(dx*dx + dy*dy)
+    }
+    
+    func setXOrigin(xOrigin: CGFloat)
+    {
+        self.frame.origin.x = xOrigin
+    }
+    
+    func setYOrigin(yOrigin: CGFloat)
+    {
+        self.frame.origin.y = yOrigin
+    }
+    
+    func setXAndYOrigin(xOrigin: CGFloat, yOrigin: CGFloat)
+    {
+        self.setXOrigin(xOrigin: xOrigin)
+        self.setYOrigin(yOrigin: yOrigin)
+    }
+    
+    func setWidth(width: CGFloat)
+    {
+        self.frame.size.width = width
+    }
+    
+    func setHeight(height: CGFloat)
+    {
+        self.frame.size.height = height
+    }
+    
+    func setSize(size: CGSize)
+    {
+        self.frame.size = size
+    }
+    
+    func setXOriginAndWidth(xOrigin: CGFloat, width: CGFloat)
+    {
+        self.setXOrigin(xOrigin: xOrigin)
+        self.setWidth(width: width)
+    }
+    
+    func setYOriginAndHeight(yOrigin: CGFloat, height: CGFloat)
+    {
+        self.setYOrigin(yOrigin: yOrigin)
+        self.setHeight(height: height)
+    }
+    
+    func setBottom(bottom: CGFloat)
+    {
+        self.setHeight(height: bottom - self.frame.origin.y)
+    }
+    
+    func shrinkHeight(shrinkOffset: CGFloat)
+    {
+        self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.size.width, height: self.frame.size.height - shrinkOffset)
+    }
+}
 ```
 
-**RectUtil Methods**
+ExtensionPlayground.playground contains example for UIView extension for CGRect helpers.
 
-*Use below to change origin X or Y value of a frame*
-```
-button.frame = CGRectUtility.GMRectWithSetXOrigin(rect: cgBtn.frame, newXOrigin: 20.0)
-button.frame = CGRectUtility.GMRectWithSetYOrigin(rect: cgBtn.frame, newXOrigin: 20.0)
-```
-
-*You can also do it together*
-```
-cgBtn.frame = CGRectUtility.GMRectWithSetXAndYOrigin(rect: cgBtn.frame, newXOrigin: 20.0, newYOrigin: 20.0)
-```
-
-*Use below to change width or height of a frame*
-```
-button.frame = CGRectUtility.GMRectWithSetWidth(rect: cgBtn.frame, newWidth: 300.0)
-button.frame = CGRectUtility.GMRectWithSetHeight(rect: cgBtn.frame, newHeight: 80.0)
-```
-
-*Doing it together*
-```
-button.frame = CGRectUtility.GMRectWithSetSize(rect: cgBtn.frame, newSize: CGSize(width: 300.0, height: 40.0))
-```
-
-*Shrink height of a frame*
-```
-button.frame = CGRectUtility.GMRectShrinkHeight(rect: cgBtn.frame, shrinkAmount: 40.0)
-```
-
-*Changing center of a frame within a container*
-```
-button.frame = CGRectUtility.GMCenteredRectWithinRect(rect: cgBtn.frame, containerRect: superView.frame)
-```
-
-**How to use it?**
-
-- Download RectUtililty.swift
-- Insert it into your source code
-- Use as explained in examples (playground)
-
-Open to suggestions and improvements!
+### Compatibility
+Verified that this repository's code works in XCode 8 with Swift 3.0
