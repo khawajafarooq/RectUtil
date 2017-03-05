@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		031A5B971E6BFDB200F8AF97 /* ExtensionPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ExtensionPlayground.playground; sourceTree = "<group>"; };
 		037256491E5EA5080064ED47 /* RectUtililty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectUtililty.swift; sourceTree = "<group>"; };
 		03C6615B1E5D5471001A2549 /* GeometryPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = GeometryPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -15,6 +16,7 @@
 		03C661541E5D540C001A2549 = {
 			isa = PBXGroup;
 			children = (
+				031A5B971E6BFDB200F8AF97 /* ExtensionPlayground.playground */,
 				037256491E5EA5080064ED47 /* RectUtililty.swift */,
 				03C6615B1E5D5471001A2549 /* GeometryPlayground.playground */,
 			);
