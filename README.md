@@ -89,3 +89,11 @@ ExtensionPlayground.playground contains example for UIView extension for CGRect 
 
 ### Compatibility
 Verified that this repository's code works in XCode 8 with Swift 3.0
+
+### Author 🙏🏻
+**Web**: [Khawaja Farooq](http://khawajafarooq.github.io)
+
+**Twitter**: [@khfarooq](https://twitter.com/khfarooq)
+
+**Medium**: [@khfarooq](https://medium.com/@khfarooq)
+
