@@ -1,5 +1,5 @@
 ## RectUtil
-RectUtil is a syntactic sugar of CGRect. It will make your life easy while interacting with CGRect.
+RectUtil is a syntactic sugar of CGRect. It will make your life easy while interacting with CGRect. 
 
 I have accomplished it using 2 approaches:
 - Utility class
@@ -10,7 +10,7 @@ Util is explained with example XCode project on the blog post [RectUtil - iOS CG
 ](https://medium.com/@kfarooqa/rectutil-ios-cgrect-utility-class-a4792a964e58#.wf8qtzjby).
 
 ### Extension
-Another approach of achieving this using UIView extension.
+A swifty approach of achieving this using UIView extension.
 
 ```
 extension UIView {
